@@ -1,4 +1,4 @@
-#Task:
+# Task:
 Make a website for entry and display of cooking recipes with Angular 2 using TypeScript.
 
 A recipe consists of:
