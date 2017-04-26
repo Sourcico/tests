@@ -1,0 +1,12 @@
+<div>
+  <md-content class="md-padding">
+    <md-autocomplete placeholder="Pick ingredient"
+                     md-selected-item="vm.selectedCountry"
+                     md-search-text="vm.searchText"
+                     md-no-cache="true"
+                     md-items="item in vm.querySearch(vm.searchText)"
+                     md-item-text="item.display">
+      <span md-highlight-text="vm.searchText">{{item.display}}</span>
+    </md-autocomplete>
+  </md-content>
+</div>

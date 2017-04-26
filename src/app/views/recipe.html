@@ -1,0 +1,41 @@
+<div layout="row" layout-margin>
+
+    <div flex="25">
+        <div flex layout-margin="" layout-sm="column" class="layout-sm-column layout-row">
+            <p>Name:</p>{{vm.data.name}}
+        </div>
+        <div flex layout-margin="" layout-sm="column" class="layout-sm-column layout-row">
+            <p>Source:</p>{{vm.data.source}}
+        </div>
+        <div flex layout-margin="" layout-sm="column" class="layout-sm-column layout-row">
+            <p>Ingredients:</p>
+            <div layout="row" flex>
+                <md-chips md-on-remove="vm.remove($chip)" md-transform-chip="$chip.text" ng-model="vm.data.ingredients" placeholder="" readonly="true">
+                    <md-chip-template>
+                        <strong>{{$chip.text}} - {{$chip.qnt}}</strong>
+                    </md-chip-template>
+                </md-chips>
+            </div>
+        </div>
+        <div flex layout-margin="" layout-sm="column" class="layout-sm-column layout-row">
+            <p>Preparation time:</p>
+            <span ng-if="vm.data.preparationTime.hours>0">{{vm.data.preparationTime.hours}} hours</span> <span ng-if="vm.data.preparationTime.minutes>0">{{vm.data.preparationTime.minutes||0}} minutes</span>
+        </div>
+        <button class="md-raised md-primary md-button md-ink-ripple" ng-click="vm.back()">BACK</button>
+        <button class="md-raised md-warn md-button md-ink-ripple" ng-click="vm.delete()">DELETE</button>
+    </div>
+
+    <div flex>
+        <md-content></md-content>
+    </div>
+
+
+    <div flex="50">
+        <div layout-margin="row" layout="column">
+            <h1>Instructions</h1>
+            <div layout-gt-md="row">
+                {{vm.data.instructions}}
+            </div>
+        </div>
+    </div>
+</div>

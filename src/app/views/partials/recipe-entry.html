@@ -1,0 +1,61 @@
+<md-content class="md-padding" ng-controller="RecipeentryController as vm">
+    <div layout="row">
+        <!--<h4 flex="82">{{vm.remaining()}} of {{vm.todos.length}} remaining</h4>-->
+        <!--<md-button class="md-primary" ng-click="vm.toggleAll()">Toggle All-->
+        <!--</md-button>-->
+    </div>
+
+    <form ng-submit="vm.addTodo($event)" novalidate name="tasksForm">
+        <div layout="row" flex>
+        </div>
+        <div layout="row" flex>
+        </div>
+
+
+
+
+        <div flex layout-margin="" layout-sm="column" class="layout-sm-column layout-row">
+            <input flex-gt-sm="100" ng-model="vm.todoName" name="taskName" placeholder="Recipe Name" required type="text">
+        </div>
+        <div flex layout-margin="" layout-sm="column" class="layout-sm-column layout-row">
+            <input flex-gt-sm="100" ng-model="vm.todoSource" name="taskSource" placeholder="Recipe Source" required type="text">
+        </div>
+
+
+
+        <div layout="row" flex layout="column" class="layout-sm-column layout-row">
+            <div layout-margin="row" flex layout="column" class="layout-sm-column layout-row">
+                <p flex-gt-sm="10">Preparation Time:</p>
+            </div>
+            <div layout-margin="row" flex layout="column" class="layout-sm-column layout-row">
+                <input flex-gt-sm="35" ng-model="vm.todoPreparationTime.hours" name="taskPreparationTimeHours" placeholder="Enter hours" required type="number">
+                <input flex-gt-sm="35" ng-model="vm.todoPreparationTime.minutes" name="taskPreparationTimeMinutes" placeholder="Enter minutes" required type="number">
+            </div>
+        </div>
+
+        <div layout-margin="row" layout="column">
+          <textarea ng-model="vm.todoInstructions" name="taskInstructions" placeholder="Recipe Instructions" required></textarea>
+        </div>
+        <div layout="row" flex>
+            <ingredients ng-model="vm.todoIngredientItem" name="taskIngredientItem"></ingredients>
+            <md-input-container flex ng-class="{'md-input-invalid':tasksForm.taskQnt.$error.required && tasksForm.$submitted}">
+                <label>Quantity</label>
+                <input ng-model="vm.todoQnt" name="taskQnt" required type="number">
+            </md-input-container>
+            <md-button class="md-fab md-wayrn md-mini" ng-click="vm.addTodo($event)">
+                <i class="material-icons">add</i>
+            </md-button>
+        </div>
+        <p>Ingredients:</p>
+        <div layout="row" flex>
+            <md-chips md-on-remove="vm.remove($chip)" md-transform-chip="$chip.text" ng-model="vm.todos" placeholder="" readonly="false">
+                <md-chip-template>
+                      <strong>{{$chip.text}} - {{$chip.qnt}}</strong>
+                </md-chip-template>
+
+            </md-chips>
+        </div>
+
+        <md-button class="md-primary" ng-click="vm.createRecipe($event)">CREATE</md-button>
+    </form>
+</md-content>
