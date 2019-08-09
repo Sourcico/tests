@@ -68,3 +68,7 @@ The server response should contain:
 - Ingredients display, including ingredient quantities.
 - Preparation time in minutes
 - The full preparation instructions
+
+## Notes:
+Feel free to use unit tests or Postman collections to test the functionalities. Feel free to use n-tier architectures and design patterns, even if the solution seems overengineered.  
+For the database, please provide some kind of script that will enable database generation.
