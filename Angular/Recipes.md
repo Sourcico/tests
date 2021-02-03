@@ -1,5 +1,5 @@
 # Task
-Make a website for entry and display of cooking recipes with Angular 1.X, preferably 1.5 or later.
+Make a website for entry and display of cooking recipes with Angular 2 using TypeScript.
 
 A recipe consists of:
 - Recipe name
@@ -75,7 +75,5 @@ When the recipe details is shown, he recipe entry and the recipe list views shou
 It should be possible to access the recipe list from the recipe details view.
 
 ## Notes
-The solution should use services with dependency injection for data access, and directives as needed.  
-The solution must include a unit testing architecture, with representative unit tests.  
 The data should be persistent within the page session, i.e. it's ok to be lost upon page refresh (a.k.a. in-memory values are good enough).
 However, it should be possible to change the application to use a persistent backend with minimum work possible, e.g. using [http-server](https://www.npmjs.com/package/http-server), or something similar
