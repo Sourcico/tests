@@ -1,5 +1,5 @@
 # Task
-Make a back-end, including a relational database, for an application that will be used for entry and display of cooking recipes
+Make a back-end, including a database (per candidate preference if it's relational or not), for an application that will be used for entry and display of cooking recipes
 
 A recipe consists of:
 - Recipe name
